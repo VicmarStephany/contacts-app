@@ -1,0 +1,53 @@
+.container{
+    padding: 20px 50px;
+
+    .header{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .main{
+        margin-top: 20px;
+
+        mat-expansion-panel, mat-expansion-panel-header{
+
+            min-height: 80px !important;
+
+            mat-panel-title{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                min-height: 80px !important;
+                
+                fa-icon{
+                    margin-right: 10px;
+                }
+
+                h3, h5{
+                    margin: 0px;
+                }
+            }
+
+            mat-panel-description {
+                justify-content: flex-end !important;
+
+                button{
+                    width: 60px;
+                    padding: 0px;
+                    margin: 10px;
+
+                    .edit{
+                        color: green;
+                    }
+
+                    .delete{
+                        color: red;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
