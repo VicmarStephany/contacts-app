@@ -1,18 +1,23 @@
 <!--  -->
 <div class="container">
     <mat-card>
-        number <br>
-        Total Contactos
+        <div>
+            <p>{{ totalContact }}</p>
+        </div>
+        <p>Total Contactos</p>
     </mat-card>
 
     <mat-card>
-        number <br>
-        Cumpleañeros de hoy
+        <div>
+            <p>{{ hoy | date}}</p>   
+        </div>
+
+        <p>Cumpleañeros de hoy</p>
     </mat-card>
 
-    <button mat-raised-button color="accent" [routerLink]="['/contact-list']" >
+    <button mat-raised-button color="primary" [routerLink]="['/contact-list']">
         <fa-icon [icon]="icon" size="lg"></fa-icon>
-        Mis Contactos 
+        Mis Contactos
     </button>
 
 

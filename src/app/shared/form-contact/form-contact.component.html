@@ -1,1 +1,60 @@
+<div class="container">
 
+    <form [formGroup]="contactForm">
+
+        <mat-label>Número de Identificación</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="id" placeholder="Nro de identificación">
+            <mat-error *ngIf="contactForm.controls['id'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <mat-label>Nombre completo</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="name" placeholder="Nombre completo">
+            <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <mat-label>Número de teléfono</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="phone" placeholder="Número de teléfono">
+            <mat-error *ngIf="contactForm.controls['phone'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <mat-label>Dirección</mat-label>
+        <mat-form-field appearance="outline">
+            <textarea matInput formControlName="address" placeholder="Dirección"></textarea>
+            <mat-error *ngIf="contactForm.controls['address'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <mat-label>Fecha de nacimiento</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="birthday" placeholder="Fecha de nacimiento" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="contactForm.controls['birthday'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <div class="buttons">
+            <button mat-raised-button color="accent" [disabled]="contactForm.invalid || submitted"
+                (click)="createContact()">
+                Aceptar
+            </button>
+
+            <button mat-raised-button color="warn" [routerLink]="['/contact-list']">
+                Cancelar
+            </button>
+        </div>
+
+    </form>
+
+</div>

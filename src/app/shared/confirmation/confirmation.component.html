@@ -1,0 +1,8 @@
+<div>
+    <h2 mat-dialog-title>¿Desea eliminar este contacto?</h2>
+
+    <div mat-dialog-actions class="actions">
+        <button mat-stroked-button (click)="onNoClick()">Cancelar</button>
+        <button mat-stroked-button color="warn" [mat-dialog-close]="data.confirmation" cdkFocusInitial>Eliminar</button>
+    </div>
+</div>

@@ -1,37 +1,37 @@
 <div class="container">
     <!-- header -->
     <div class="header">
-        <button mat-raised-button color="accent" [routerLink]="['/create-contact']"> Nuevo Contacto </button>
+        <button mat-raised-button style="background-color: #09a924; color: #ffffff" [routerLink]="['/create-contact']"> Nuevo Contacto </button>
     </div>
 
     <!-- main -->
     <div class="main">
         <mat-accordion>
-            <!--<mat-expansion-panel *ngFor="let contact of contacts" hideToggle>-->
-            <mat-expansion-panel hideToggle>
+            <mat-expansion-panel *ngFor="let contact of contacts" hideToggle>
+
                 <mat-expansion-panel-header>
 
                     <mat-panel-title>
-                        <fa-icon [icon]="contact" size="3x"></fa-icon>
+                        <fa-icon [icon]="user" size="3x"></fa-icon>
                         <div>
-                            <h3>Vicmar Rojas</h3>
-                            <h5>04262933319</h5>
-                            <h5>9 abr 1996</h5>
+                            <h3>{{ contact.name }}</h3>
+                            <h5>{{ contact.phone }}</h5>
+                            <h5>{{ contact.birthday | date }}</h5>
                         </div>
                     </mat-panel-title>
 
                     <mat-panel-description>
-                        <button class="edit" mat-stroked-button [routerLink]="['/update-contact']">
+                        <button class="edit" mat-stroked-button [routerLink]="['/update-contact', contact.id]">
                             <fa-icon [icon]="editC" size="lg"></fa-icon> 
                         </button>
-                        <button mat-stroked-button (click)="deleteContact()">
+                        <button mat-stroked-button (click)=" confirmDelete(contact.id)">
                             <fa-icon class="delete" [icon]="deleteC" size="lg"></fa-icon> 
                         </button>
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <p>Número de identificación</p>
-                <p>Dirección</p>
+                <p>{{ contact.id }}</p>
+                <p>{{ contact.address }}</p>
             </mat-expansion-panel>
 
         </mat-accordion>

@@ -16,9 +16,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatProgressBarModule } from '@angular/material/progress-bar'; 
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { ContactListComponent } from './pages/contact-list/contact-list.componen
 import { CreateContactComponent } from './pages/create-contact/create-contact.component';
 import { UpdateContactComponent } from './pages/update-contact/update-contact.component';
 import { FormContactComponent } from './shared/form-contact/form-contact.component';
+import { ConfirmationComponent } from './shared/confirmation/confirmation.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { FormContactComponent } from './shared/form-contact/form-contact.compone
     ContactListComponent,
     CreateContactComponent,
     UpdateContactComponent,
-    FormContactComponent
+    FormContactComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,16 +57,17 @@ import { FormContactComponent } from './shared/form-contact/form-contact.compone
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    MatProgressBarModule,
     MatDividerModule,
     MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule
   ],
 
-  providers: [],
+  providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

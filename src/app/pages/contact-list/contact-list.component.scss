@@ -9,6 +9,10 @@
     .main{
         margin-top: 20px;
 
+        mat-expansion-panel{
+            margin-bottom: 20px;
+        }
+
         mat-expansion-panel, mat-expansion-panel-header{
 
             min-height: 80px !important;
@@ -20,7 +24,7 @@
                 min-height: 80px !important;
                 
                 fa-icon{
-                    margin-right: 10px;
+                    margin-right: 25px;
                 }
 
                 h3, h5{
