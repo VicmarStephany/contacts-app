@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: auto;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        border-radius: 5px;
+        border: solid 1px #673ab7;
+
+        mat-form-field{
+            width: 300px;
+        }
+
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
