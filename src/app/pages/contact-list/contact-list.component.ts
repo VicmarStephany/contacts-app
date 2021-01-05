@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faUserCircle, faTrashAlt, faPen  } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle, faTrashAlt, faPen, faIdCard, faMapMarked } from '@fortawesome/free-solid-svg-icons';
 import { ContactModel } from 'src/app/data/contact.model'
 import { ConfirmationComponent } from 'src/app/shared/confirmation/confirmation.component';
 
@@ -14,6 +14,8 @@ export class ContactListComponent implements OnInit {
   user = faUserCircle;
   editC = faPen;
   deleteC = faTrashAlt;
+  id = faIdCard;
+  address = faMapMarked;
 
   contacts: ContactModel[];
   confirmation: boolean = false;
@@ -26,9 +28,8 @@ export class ContactListComponent implements OnInit {
   }
 
   confirmDelete(id) {
-    console.log(id)
+
     const dialogRef = this.dialog.open(ConfirmationComponent, {
-      //width: '250px',
       data: { confirmation: this.confirmation }
     });
 
@@ -44,7 +45,7 @@ export class ContactListComponent implements OnInit {
   deleteContact(id){
 
     let list = this.contacts.filter(contact => contact.id !== id);
-    console.log(list);
+  
     localStorage.setItem('contacts-list', JSON.stringify(list));
     location.reload();
 
